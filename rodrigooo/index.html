@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            transition: background-color 0.1s;
+         
+         }
+
+        @keyframes girar {
+             from {
+            transform: rotate(0deg);
+        }
+            to {
+            transform: rotate(360deg);
+        }
+        }
+
+        .rotating-image {
+        animation: girar 2s linear infinite; /* Definir a animação */
+        }
+
+        #container-img {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #container-img img {
+            display: block;
+            width: 15%;
+        }
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #texto-div{
+            height: 300px;
+        }
+        #container p{
+            font-size: 50px;
+            color: #ffff;
+        }
+
+  </style>
+</head>
+<body>
+    
+
+    <div id="container">
+        <div id="container-img">
+            <img src="img/262908427_286797606674103_5059978318088317295_n.jpg" alt="" class="rotating-image">
+            <img src="img/WhatsApp Image 2023-03-18 at 13.47.36 (2).jpeg" alt="" class="rotating-image">
+            <img src="img/WhatsApp Image 2023-04-12 at 17.35.27.jpeg" alt="" class="rotating-image">
+        </div>
+        <div id="texto-div">
+            <p id="texto">Sente a pressão Neném</p>
+        </div>
+        <audio  controls>
+            <source src="audio/MC Daleste e Yoshi - Que Cheiro de Maconha.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+    <script>
+        function trocarCorFundo() {
+            var colors = ['#ff0000', '#00ff00', '#0000ff', '#000', '#854787']; // Array de cores para escolher
+            var body = document.querySelector('body');
+            var randomIndex = Math.floor(Math.random() * colors.length); // Escolher um índice aleatório
+
+    // Definir a cor de fundo do corpo
+            body.style.backgroundColor = colors[randomIndex];
+        }
+
+  // Chamar a função trocarCorFundo a cada 3 segundos (3000 ms)
+        setInterval(trocarCorFundo, 500);
+
+
+        var textElement = document.getElementById('texto');
+
+         function alternarVisibilidade() {
+            if (textElement.style.display === 'none') {
+                textElement.style.display = 'block'; // Exibir o texto
+            } else {
+                textElement.style.display = 'none'; // Ocultar o texto
+            }
+        }
+
+    // Chamar a função alternarVisibilidade a cada 2 segundos (2000 ms)
+    setInterval(alternarVisibilidade, 10);
+
+</script>
+</body>
+</html>
